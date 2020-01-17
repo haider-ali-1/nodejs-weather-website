@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
         }
         
         messageOne.textContent = data.location
-        messageTwo.textContent = `${data.one_day_summary} It is currently ${data.current_temp} degree out. There is a ${data.rain_probability_percent}% chance of rain.`
+        messageTwo.textContent = `${data.one_day_summary} It is currently ${data.current_temp} degree out. This high today is ${data.max_temp} with a low of ${data.lowest_temp}. There is a ${data.rain_probability_percent}% chance of rain.`
         temp.textContent = `${data.current_temp} (°C)`
 
     })

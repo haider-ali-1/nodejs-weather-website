@@ -54,7 +54,7 @@ app.get('/weather', (req, res) => {
             return res.send({ error })
         }
 
-        forecast(longitude, latitude, (error, {one_day_summary, current_temp, rain_probability_percent} = {}) => {
+        forecast(longitude, latitude, (error, {one_day_summary, current_temp, rain_probability_percent, max_temp, lowest_temp} = {}) => {
             if (error) {
                 return res.send({ error })
             }
@@ -63,6 +63,8 @@ app.get('/weather', (req, res) => {
                 one_day_summary,
                 current_temp,
                 rain_probability_percent,
+                max_temp,
+                lowest_temp,
                 // forecast: forecastData,
                 location,
                 address: req.query.address

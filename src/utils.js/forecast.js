@@ -11,7 +11,9 @@ const forecast = (longitude, latitude, callback) => {
             callback(undefined, {
                 one_day_summary: response.body.daily.data[0].summary,
                 current_temp: response.body.currently.temperature,
-                rain_probability_percent: response.body.currently.precipProbability
+                rain_probability_percent: response.body.currently.precipProbability,
+                max_temp: response.body.daily.data[0].temperatureHigh,
+                lowest_temp: response.body.daily.data[0].temperatureLow
             })
             // callback(undefined, `${response.body.daily.data[0].summary} it is currently ${response.body.currently.temperature} degree out. There is a ${response.body.currently.precipProbability}% chance of rain.`)
         }
